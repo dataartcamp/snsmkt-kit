@@ -1,0 +1,6 @@
+# 이 저장소의 검증 절차는 SKILL.md 미러 3벌의 해시 일치다(CLAUDE.md 참조).
+# 줄바꿈이 기기별로 갈리면 내용이 같아도 해시가 달라져 검증이 재현되지 않는다.
+# 체크아웃 시 CRLF 변환(core.autocrlf=true)을 무력화하고 LF로 고정한다.
+*.md text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf

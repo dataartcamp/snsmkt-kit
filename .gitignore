@@ -1,0 +1,11 @@
+# 스킬이 만들어내는 산출물 — 저장소 루트에 생성된다.
+# 배포본에 테스트 산출물이 섞이지 않도록 제외한다.
+# (와일드카드를 쓰면 README·CLAUDE·AGENTS까지 사라지므로 파일명을 정확히 지정)
+/expert-voice.md
+/threads-copy.md
+/linkedin-copy.md
+
+# OS·에디터 부산물
+Thumbs.db
+.DS_Store
+desktop.ini
