@@ -38,6 +38,8 @@ done
 
 수정은 한 파일에서 하고 **파일 복사로 나머지 두 곳에 전파한다.** 세 파일을 각각 에디터로 열어 저장하면 줄바꿈(CRLF/LF)이 달라져 내용이 같아도 해시가 어긋난다.
 
+체크아웃 쪽 줄바꿈은 `.gitattributes`(`*.md text eol=lf`)가 막아준다. 이 PC는 `core.autocrlf=true`라 그것이 없으면 클론할 때마다 파일이 CRLF로 바뀌어, 위 해시가 기기마다 달라지고 검증이 재현되지 않는다. **`.gitattributes`를 지우면 이 저장소의 검증 절차가 무력해진다.**
+
 각 SKILL.md 맨 끝 "참고" 절이 자기 폴더의 세 경로를 문자열로 적어둔다. 스킬을 추가·개명하면 그 문장도 함께 고친다.
 
 ## 두 스킬을 잇는 계약 — 제목 문자열
@@ -67,6 +69,24 @@ done
 
 ## Git
 
+원격은 `https://github.com/dataartcamp/snsmkt-kit.git`, 기본 브랜치는 `main`이다. **공개 저장소**이며 수강생은 README 안내대로 `Code → Download ZIP`으로 받는다.
+
 `SKILL.md`를 커밋하기 전에 위 해시 검증을 통과시킨다. 미러가 어긋난 상태의 커밋은 만들지 않는다.
 
 스킬 실행 산출물(`expert-voice.md`, `threads-copy.md`, `linkedin-copy.md`)은 저장소 루트에 생성되며 `.gitignore`로 제외되어 있다. 배포본에 테스트 산출물이 섞이지 않게 하려는 것이므로 이 항목을 지우지 않는다.
+
+### 커밋 신원 — 반드시 프로젝트 레벨로
+
+이 저장소의 계정은 `dataartcamp <dataartcamp@gmail.com>`이며 `--local`로 설정되어 있다.
+
+작업 PC는 **전역 git 신원이 비어 있고 `user.useConfigOnly=true`가 켜져 있다.** 프로젝트마다 계정이 달라, 전역 폴백이 남아 있으면 다른 계정으로 조용히 커밋되기 때문이다. 그 결과:
+
+- 이 저장소를 **새로 클론하면 첫 커밋이 `Author identity unknown`으로 중단된다.** 정상 동작이다.
+- 해결은 `--local` 설정이며, **전역 설정으로 우회하지 않는다.**
+
+```bash
+git config --local user.name "dataartcamp"
+git config --local user.email "dataartcamp@gmail.com"
+```
+
+커밋 후 `git log --pretty='%an <%ae>' -1`로 실제 귀속을 확인한다. 커밋 신원은 푸시 인증(Windows 자격 증명 관리자)과 별개다.
