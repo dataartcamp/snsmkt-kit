@@ -67,13 +67,17 @@
 
 ```
 snsmkt-kit/
-├── README.md
+├── README.md          ← 지금 보고 계신 사용 안내
+├── CLAUDE.md          ← AI 도구가 읽는 작업 지침
+├── AGENTS.md          ← 같은 지침의 Codex CLI용 사본
 ├── .claude/skills/    ← Claude Code용
 ├── .agent/skills/     ← Antigravity용
 └── .codex/skills/     ← Codex CLI용
 ```
 
 세 폴더에 같은 스킬이 들어 있습니다. 도구마다 스킬을 찾는 위치가 달라 세 벌을 넣어두었습니다.
+
+`CLAUDE.md`와 `AGENTS.md`는 AI 도구가 이 키트를 다룰 때 참고하는 파일입니다. 사용하실 때 열어보거나 수정하실 필요는 없습니다.
 
 ---
 
