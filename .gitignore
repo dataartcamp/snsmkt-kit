@@ -1,11 +1,15 @@
 # 스킬이 만들어내는 산출물 — 저장소 루트에 생성된다.
 # 배포본에 테스트 산출물이 섞이지 않도록 제외한다.
-# (와일드카드를 쓰면 README·CLAUDE·AGENTS까지 사라지므로 파일명을 정확히 지정)
+# (넓은 와일드카드는 README·CLAUDE·AGENTS까지 지우므로 금지. 카피는 번호가 붙어
+#  누적되므로 파일명 접두사까지 고정한 글롭만 쓴다)
 /expert-voice.md
-/threads-copy.md
-/linkedin-copy.md
+/threads-copy-*.md
+/linkedin-copy-*.md
 
 # OS·에디터 부산물
 Thumbs.db
 .DS_Store
 desktop.ini
+
+# 도구 부산물 — Playwright MCP가 스냅샷을 여기 떨군다
+/.playwright-mcp/

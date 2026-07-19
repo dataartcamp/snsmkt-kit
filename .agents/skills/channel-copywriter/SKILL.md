@@ -59,14 +59,16 @@ description: >-
 
 | 채널 | 생성 파일 |
 |---|---|
-| `threads` | `threads-copy.md` |
-| `linkedin` | `linkedin-copy.md` |
+| `threads` | `threads-copy-NN.md` |
+| `linkedin` | `linkedin-copy-NN.md` |
 | `통합` | 위 두 파일을 각각 생성 — 한 파일로 합치지 않는다 |
 
-원문/주제를 입력받은 위치(또는 사용자가 지정한 폴더)에 저장한다. 같은 이름의 파일이 있으면
-덮어쓰기 전에 확인한다.
+`NN`은 `01`부터 시작하는 두 자리 일련번호다. 저장 폴더에 같은 채널의 파일이 이미 있으면
+가장 큰 번호 +1을 쓴다(`threads-copy-01.md` → `-02` → `-03`). 기존 파일은 덮어쓰지 않는다.
 
-## Threads — `threads-copy.md`
+원문/주제를 입력받은 위치(또는 사용자가 지정한 폴더)에 저장한다.
+
+## Threads — `threads-copy-NN.md`
 
 - 3버전, 각 공백 포함 500자 이내 — 넘으면 다시 세어 줄이고 재출력
 - 제목에 글자수를 괄호로 표기
@@ -115,7 +117,7 @@ description: >-
   `expert-voice-builder`로 기준 문서를 만든 뒤 다시 뽑으세요.
 ```
 
-## LinkedIn — `linkedin-copy.md`
+## LinkedIn — `linkedin-copy-NN.md`
 
 - 1개 버전, 1,300~1,900자, 전문가 1인칭 톤
 - 첫 3줄 안에 훅 배치 — '더 보기'로 접히기 전에 핵심이 보여야 한다
@@ -166,4 +168,4 @@ description: >-
 SKILL.md는 Claude Code·Codex CLI·Antigravity 등이 함께 채택한 공개 표준(Agent Skills)이라
 내용 수정 없이 재사용 가능하다. 이 폴더(`channel-copywriter/`) 통째로 복사해 해당 툴이 스캔하는
 프로젝트 스코프 경로에 두면 된다: Claude Code는 `.claude/skills/channel-copywriter/`,
-Antigravity는 `.agent/skills/channel-copywriter/`, Codex CLI는 `.codex/skills/channel-copywriter/`.
+Antigravity·Codex는 `.agents/skills/channel-copywriter/`.

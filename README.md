@@ -25,6 +25,8 @@
 | **Antigravity** | 프로그램에서 이 폴더를 프로젝트로 열기 |
 | **Codex CLI** | 터미널에서 해당 폴더로 이동 후 `codex` |
 
+※ 표의 **Codex CLI**는 터미널에서 실행하는 CLI 기준입니다. ChatGPT 웹의 Codex(클라우드)에서도 스킬이 자동으로 인식되는지는 확인되지 않았습니다. 자동으로 반응하지 않으면 아래 "잘 안 될 때"처럼 스킬명을 직접 불러 요청해 보세요.
+
 ## 3. 브랜드보이스 만들기
 
 채팅창에 스킬 이름을 붙여 요청합니다.
@@ -47,9 +49,11 @@
 
 | 요청 | 생성되는 파일 |
 |---|---|
-| Threads 카피 | `threads-copy.md` — 3버전, 각 500자 이내 |
-| LinkedIn 포스트 | `linkedin-copy.md` — 1편, 1,300~1,900자 |
+| Threads 카피 | `threads-copy-01.md` — 3버전, 각 500자 이내 |
+| LinkedIn 포스트 | `linkedin-copy-01.md` — 1편, 1,300~1,900자 |
 | 채널별 카피 | 위 두 파일 |
+
+다시 뽑을 때마다 덮어쓰지 않고 번호가 하나씩 올라갑니다 (`-01` → `-02` → `-03`).
 
 ## 강의와의 관계
 
@@ -69,13 +73,12 @@
 snsmkt-kit/
 ├── README.md          ← 지금 보고 계신 사용 안내
 ├── CLAUDE.md          ← AI 도구가 읽는 작업 지침
-├── AGENTS.md          ← 같은 지침의 Codex CLI용 사본
+├── AGENTS.md          ← 같은 지침의 Codex용 사본
 ├── .claude/skills/    ← Claude Code용
-├── .agent/skills/     ← Antigravity용
-└── .codex/skills/     ← Codex CLI용
+└── .agents/skills/    ← Antigravity·Codex 공용
 ```
 
-세 폴더에 같은 스킬이 들어 있습니다. 도구마다 스킬을 찾는 위치가 달라 세 벌을 넣어두었습니다.
+두 폴더에 같은 스킬이 들어 있습니다. Antigravity와 Codex는 스킬을 같은 위치(`.agents/skills/`)에서 찾고, Claude Code만 별도 위치(`.claude/skills/`)를 씁니다.
 
 `CLAUDE.md`와 `AGENTS.md`는 AI 도구가 이 키트를 다룰 때 참고하는 파일입니다. 사용하실 때 열어보거나 수정하실 필요는 없습니다.
 

@@ -104,4 +104,4 @@ description: >-
 SKILL.md는 Claude Code·Codex CLI·Antigravity 등이 함께 채택한 공개 표준(Agent Skills)이라
 내용 수정 없이 재사용 가능하다. 이 폴더(`expert-voice-builder/`) 통째로 복사해 해당 툴이
 스캔하는 프로젝트 스코프 경로에 두면 된다: Claude Code는 `.claude/skills/expert-voice-builder/`,
-Antigravity는 `.agent/skills/expert-voice-builder/`, Codex CLI는 `.codex/skills/expert-voice-builder/`.
+Antigravity·Codex는 `.agents/skills/expert-voice-builder/`.
